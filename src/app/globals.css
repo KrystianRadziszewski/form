@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CHECKBOX */
+.checkbox input[type='checkbox'] {
+	display: none;
+	pointer-events: none;
+}
+
+.checkbox input[type='checkbox'] + label {
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 28px;
+	display: grid;
+	grid-template-columns: auto 3fr;
+}
+
+.checkbox input[type='checkbox'] + label svg {
+	width: 20px;
+	fill: white;
+}
+
+.checkbox input[type='checkbox'] + label svg .box {
+	stroke: #a9bcd0;
+	stroke-width: 2;
+	stroke-dasharray: 320;
+	stroke-dashoffset: 0;
+	fill: white;
+	transition: stroke-dashoffset 0.3s linear;
+}
+
+.checkbox input[type='checkbox'] + label svg .check {
+	stroke: #201e50;
+	stroke-width: 5;
+	stroke-dasharray: 70;
+	stroke-dashoffset: 70;
+	fill: none;
+	transition: stroke-dashoffset 0.3s linear;
+}
+
+.checkbox input[type='checkbox']:checked + label .box {
+	stroke-dashoffset: 320;
+}
+
+.checkbox input[type='checkbox']:checked + label .check {
+	stroke-dashoffset: 0;
+}
+
+.checkbox input[type='checkbox'] + label span {
+	color: #a9bcd0;
+	margin-left: 8px;
+}
+
+.checkbox input[type='checkbox']:checked + label span {
+	color: #201e50;
+}
